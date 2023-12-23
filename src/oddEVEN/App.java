@@ -1,13 +1,15 @@
 package oddEVEN;
 
 import java.util.Arrays;
-import java.util.Date;;
+import java.util.Date;
 
 public class App {
     public static void main(String[] args) {
 
         Recursion r = new Recursion();
-        System.out.print(r.fibo(4));
+        int[] arr = { 1, 2, 3, 4, 55, 69, 73, 800 };
+        int ans = r.binarySearchUsingRecursion(arr, 800, 0, arr.length - 1);
+        System.out.print(ans);
 
         // Date currentDate = new Date();
         // System.out.printf("Current Date: %tF", currentDate);
@@ -39,7 +41,7 @@ public class App {
         // int[][] ans = solution.transpose(secondArray);
 
         // AboutArray aboutArray = new AboutArray();
-        // boolean ans = aboutArray.isPallindrome("NAMAn");
+        // boolean ans = aboutArray.isPdallindrome("NAMAn");
         // System.out.println(ans);
         // int[][] matrix = aboutArray.flipAndInvertImage(secondArray);
 
