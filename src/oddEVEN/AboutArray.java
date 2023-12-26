@@ -131,4 +131,24 @@ public class AboutArray {
         return image;
     }
 
+
+
+
+     void transposeMatrix(int[][] mat){
+        int[][] newMat = new int[mat[0].length][mat.length];
+
+        for( int i = 0 ; i < mat.length ; i++){
+            for( int j = 0 ; j < mat[0].length ; j++){
+                newMat[j][i] = mat[i][j]; 
+            }
+        }
+
+        for( int i = 0 ; i < newMat.length ; i++){
+            for( int j = 0 ; j < newMat[0].length ; j++){
+                System.out.print(newMat[i][j]+" ");
+            }
+            System.out.println();
+        }
+     }
+
 }

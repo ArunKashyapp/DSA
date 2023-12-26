@@ -1,15 +1,27 @@
 package oddEVEN;
-
 import java.util.Arrays;
-import java.util.Date;
 
 public class App {
     public static void main(String[] args) {
 
-        Recursion r = new Recursion();
-        int[] arr = { 1, 2, 3, 4, 55, 69, 73, 800 };
-        int ans = r.binarySearchUsingRecursion(arr, 800, 0, arr.length - 1);
-        System.out.print(ans);
+    // int i = 0;
+    
+    // System.out.println(j);
+    // AboutList list = new AboutList();
+    // list.addingElement();
+    // list.printElements();
+
+   SpiralMatrix r  = new SpiralMatrix();
+   int[][] mat =  {{1,2},{4,5},{7,8}};
+  int[] ans = r.spiralOrder(mat);
+System.out.println(Arrays.toString(ans));
+
+        // Recursion r = new Recursion();
+        // int anss = r.factorialOfNumber(6);
+        // System.out.println(anss);
+        // int[] arr = { 1, 2, 3, 4, 55, 69, 73, 800 };
+        // int ans = r.binarySearchUsingRecursion(arr, 0, 0, arr.length - 1);
+        // System.out.print(ans);
 
         // Date currentDate = new Date();
         // System.out.printf("Current Date: %tF", currentDate);
@@ -43,7 +55,7 @@ public class App {
         // AboutArray aboutArray = new AboutArray();
         // boolean ans = aboutArray.isPdallindrome("NAMAn");
         // System.out.println(ans);
-        // int[][] matrix = aboutArray.flipAndInvertImage(secondArray);
+        // int[][] matrix = aboutArray.flipAndIndvertImage(secondArray);
 
         // for (int i = 0; i < n.length; i++) {
         // System.out.println(n[i]);
