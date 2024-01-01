@@ -1,20 +1,31 @@
 package oddEVEN;
+
 import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
+HelperRecurssion hr  = new HelperRecurssion();
 
-    // int i = 0;
-    
-    // System.out.println(j);
-    // AboutList list = new AboutList();
-    // list.addingElement();
-    // list.printElements();
+System.out.println(ans);
+        
 
-   SpiralMatrix r  = new SpiralMatrix();
-   int[][] mat =  {{1,2},{4,5},{7,8}};
-  int[] ans = r.spiralOrder(mat);
-System.out.println(Arrays.toString(ans));
+        // Find the 4th bit
+       
+        // int i = 0;
+
+        // System.out.println(j);
+        // AboutList list = new AboutList();
+        // list.addingElement();
+        // list.printElements();
+        // int[] arr = { 1, 2, 3, 3, 4, 2, 1 };
+        // Operator op = new Operator();
+
+        // int binaryNumber = 0b10001;
+        // System.out.println(op.findIthBit(5, binaryNumber));
+        // SpiralMatrix r = new SpiralMatrix();
+        // int[][] mat = { { 1, 2 }, { 4, 5 }, { 7, 8 } };
+        // int[] ans = r.spiralOrder(mat);
+        // System.out.println(Arrays.toString(ans));
 
         // Recursion r = new Recursion();
         // int anss = r.factorialOfNumber(6);
