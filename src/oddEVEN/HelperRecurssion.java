@@ -7,10 +7,7 @@ class HelperRecurssion {
     public static void main(String[] args) {
 
         HelperRecurssion hr = new HelperRecurssion();
-        int[] arr = { 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3 };
-        List<Integer> ls = new ArrayList<>();
-        List<Integer> ans = hr.concurrentElementss(arr, 3, 0);
-        System.err.println(ans);
+        int[] arr = { 1};
 
     }
 
@@ -74,15 +71,17 @@ class HelperRecurssion {
 
     List<Integer> concurrentElementss(int[] arr, int target, int index) {
         List<Integer> ls = new ArrayList<>();
-  if( index == arr.length){
-    return ls;
-  }
+        if (index == arr.length) {
+            return ls;
+        }
         if (target == arr[index]) {
             ls.add(arr[index]);
         }
-        List<Integer> ansfromBelow =  concurrentElementss(arr, target, index += 1);
+        List<Integer> ansfromBelow = concurrentElementss(arr, target, index += 1);
         ls.addAll(ansfromBelow);
         return ls;
     }
 
 }
+
+
