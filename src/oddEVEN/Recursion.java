@@ -1,6 +1,14 @@
 package oddEVEN;
+import java.util.Arrays;
 
 public class Recursion {
+
+    public static void main(String[] args) {
+        int[] arr = {44,3423,56,2,45,22,222,2434};
+        Recursion r = new Recursion();
+        r.bubbleSortUsingRecurssion(arr, arr.length-1, 0);
+        System.out.println(Arrays.toString(arr));
+    }
 
     int fibo(int n) {
 
@@ -43,6 +51,23 @@ public class Recursion {
         
 
         return number * factorialOfNumber(number-1);
+    }
+
+
+    void bubbleSortUsingRecurssion(int[] arr , int r, int c){
+
+        if(r==0) return;
+        if(c<r){
+            if(arr[c] >= arr[c+1]){
+                int temp = arr[c];
+                arr[c] = arr[c+1];
+                arr[c+1] = temp;
+            }
+            bubbleSortUsingRecurssion(arr, r, c+1);
+        }else{
+            bubbleSortUsingRecurssion(arr, r-1, 0);
+        }
+    
     }
 
 }
