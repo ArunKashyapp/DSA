@@ -1,12 +1,13 @@
 package oddEVEN;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class HelperRecurssion {
     public static void main(String[] args) {
 
         HelperRecurssion hr = new HelperRecurssion();
-        int[] arr = { 1, 2,3 ,8,9};
-        boolean ans = hr.linearSearch(arr, 0,3);
-        System.err.println(ans);
+        int[] arr = { 1};
 
     }
 
@@ -48,6 +49,7 @@ class HelperRecurssion {
         }
         return arr[i] < arr[i + 1] && sortedOrNot(arr, i = i + 1);
     }
+
     boolean linearSearch(int[] arr, int i, int target) {
 
         if (i == arr.length) {
@@ -55,4 +57,31 @@ class HelperRecurssion {
         }
         return arr[i] == target || linearSearch(arr, i = i + 1, target);
     }
-} 
+
+    List<Integer> concurrentElements(int[] arr, int target, int index, List<Integer> ls) {
+
+        if (index == arr.length) {
+            return ls;
+        }
+        if (target == arr[index]) {
+            ls.add(arr[index]);
+        }
+        return concurrentElements(arr, target, index += 1, ls);
+    }
+
+    List<Integer> concurrentElementss(int[] arr, int target, int index) {
+        List<Integer> ls = new ArrayList<>();
+        if (index == arr.length) {
+            return ls;
+        }
+        if (target == arr[index]) {
+            ls.add(arr[index]);
+        }
+        List<Integer> ansfromBelow = concurrentElementss(arr, target, index += 1);
+        ls.addAll(ansfromBelow);
+        return ls;
+    }
+
+}
+
+

@@ -1,9 +1,19 @@
 package oddEVEN;
 
+import java.util.Arrays;;
+
 /**
  * Sorting
  */
 public class Sorting {
+
+    public static void main(String[] args) {
+        int arr[] = { 4, 3, 2, 1 };
+
+        mergeSort(arr);
+
+        System.out.println(Arrays.toString(arr));
+    }
 
     int[] bubbleSort(int[] arr) {
 
@@ -113,4 +123,103 @@ public class Sorting {
         return arr;
     }
 
-}
+    // selection sort using recurrssion
+    // suppose you are having an array like this [4,3,2,1]
+    // lets discuss what gonna be the arguments in this method
+    // array itself , the edge elements you can say to keep track of the serching
+    // like r and c
+    // what will be the return type nothing because we gonna change the same array
+    // we do not need to return the array
+    // base condtion is when r == 1 or r < 1
+
+    void bubbleSortUsingRecurssion(int arr[], int r, int c) {
+        if (r == 0)
+            return;
+
+        if (c < r) {
+            if (arr[c] > arr[c + 1]) {
+                int temp = arr[c];
+                arr[c] = arr[c + 1];
+                arr[c + 1] = temp;
+
+            }
+            bubbleSortUsingRecurssion(arr, r, c + 1);
+        } else {
+            bubbleSortUsingRecurssion(arr, r - 1, 0);
+        }
+    }
+
+    void selectionSortUsingRecurssion(int arr[], int r, int c, int max) {
+        if (r == 0)
+            return;
+
+        if (c < r) {
+            if (arr[max] < arr[c + 1]) {
+                max = c + 1;
+            }
+            selectionSortUsingRecurssion(arr, r, c + 1, max);
+        } else {
+            swap(arr, r, max);
+            selectionSortUsingRecurssion(arr, r - 1, 0, 0);
+        }
+    }
+
+    // MergeSort
+
+    /*
+     * 3,4,5,6,8,12([8,3,4,12,5,6])
+     * 3,4,5,6,8,12 ([8,3,4])+([12,5,6])
+     * 3,4,8 ([8,3])+([4])5,6,12([12,5])+([6])
+     * 3,8 ([8])+([3])5,12([12])+[(5)]
+     * 
+     * 
+     */
+
+    static int[] mergeSort(int[] arr) {
+        if (arr.length == 1) {
+            return arr;
+        }
+
+        int mid = arr.length / 2;
+
+        int[] left = mergeSort(Arrays.copyOfRange(arr, 0, mid));
+        int[] right = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
+
+        return merge(left, right);
+    }
+
+    private static int[] merge(int[] first, int[] second) {
+        int[] mix = new int[first.length + second.length];
+
+        int i = 0;
+        int j = 0;
+        int k = 0;
+
+        while (i < first.length && j < second.length) {
+            if (first[i] < second[j]) {
+                mix[k] = first[i];
+                i++;
+            } else {
+                mix[k] = second[j];
+                j++;
+            }
+            k++;
+        }
+
+        // it may be possible that one of the arrays is not complete
+        // copy the remaining elements
+        while (i < first.length) {
+            mix[k] = first[i];
+            i++;
+            k++;
+        }
+
+        while (j < second.length) {
+            mix[k] = second[j];
+            j++;
+            k++;
+        }
+
+        return mix;
+    }
+};
