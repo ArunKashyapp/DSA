@@ -8,23 +8,68 @@ import java.util.Map;
 public class Medium {
 
     public static void main(String[] args) {
-        Medium operation = new Medium();
-        int[] arr = { 2, 4, 5, 6, 10, 11, 14, 21 };
-        int[] arr1 = { 1, 2, 3, 5, 7, 8, 11, 12, 13 };
-        HashSet<Integer> hashSet = new HashSet<>();
+        int arr[] = {3,6,7,11};
 
-        // Add elements from arr to hashSet
-        for (int num : arr) {
-            hashSet.add(num);
-        }
-
-        // Add elements from arr1 to hashSet
-        for (int num : arr1) {
-            hashSet.add(num);
-        }
-
-        System.out.println(hashSet);
+        int ans = minEatingSpeed(arr, 8);
+        System.out.println(ans);
+       
+     
     }
+
+
+    public static int minEatingSpeed(int[] piles, int h) {
+
+        Arrays.sort(piles);
+        int high = piles[piles.length-1];
+        int l = 1;
+        while( l <= high){
+            int mid = l +(high-l)/2;
+            if( results(piles, mid , h)){
+               high = mid-1;
+            }else{
+                l = mid+1;
+            }
+    }
+    return l;
+ }
+
+    static boolean results(int arr[], int mid , int h){
+        double res = 0;
+        int i = 0;
+        
+        while(i<arr.length){
+          res += Math.ceil((double)arr[i]/mid);
+          i++;
+          if( res > h){
+              return false;
+          }
+        }
+
+     return true;
+    }
+
+    public static int findMin(int[] nums) {
+        int l = 0;
+        int h = nums.length - 1;
+        int pivot = 10;
+        while (l <= h) {
+            int mid = l + (h - l) / 2;
+            if (nums[mid] > nums[mid + 1]) {
+                pivot = nums[mid];
+            } else if (nums[mid] > nums[mid-1]) {
+                l = mid + 1;
+            } else {
+                h = mid - 1;
+            }
+        }
+        // if(nums[pivot] == nums[nums.length-1]){
+        // ans = nums[0];
+        // }
+
+        return pivot;
+
+    }
+
 
     public int singleNonDuplicate540(int[] nums) {
         int ans = 0;
