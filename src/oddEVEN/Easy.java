@@ -1,16 +1,56 @@
 package oddEVEN;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Easy {
 
     // [[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]]
     public static void main(String[] args) {
      
-      String s = "HEY";
-      s.toLowerCase();
-      System.out.println(s);
+     int arr[] = {26,2,16,16,5,5,26,2,5,20,20,5,2,20,2,2,20,2,16,20,16,17,16,2,16,20,26,16};
+     System.out.println(arr.length);
+    System.out.println(uniqueOccurrences(arr));
+
         
     
+    }
+     public static boolean uniqueOccurrences(int[] arr) {
+
+        HashMap<Integer,Integer> map = new HashMap<>();
+
+        for(int i = 0; i < arr.length ; i++){
+            if(map.containsKey(arr[i])){
+              map.put(arr[i], map.get(arr[i]) + 1);
+            }else{
+                map.put(arr[i],1);
+            }
+        }
+             int temp = 0;
+        for( Map.Entry<Integer,Integer> entry : map.entrySet()){
+            if(entry.getValue()!=temp){
+               temp = entry.getValue();
+            }else{
+                return false;
+            }
+             
+        }
+       return true; 
+    }
+
+
+    public static int minSteps(String s, String t) {
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (!isPresent(t, s.charAt(i))) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    static boolean isPresent(String s , char c){
+        return s.indexOf(c) != -1;
     }
 ///////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////

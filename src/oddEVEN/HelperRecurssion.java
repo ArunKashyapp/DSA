@@ -17,6 +17,8 @@ class HelperRecurssion {
             return 1;
         }
 
+        
+
         int count = 0;
         while (n != 0) {
             int remainder = n % 10;
@@ -49,6 +51,8 @@ class HelperRecurssion {
         }
         return arr[i] < arr[i + 1] && sortedOrNot(arr, i = i + 1);
     }
+
+    
 
     boolean linearSearch(int[] arr, int i, int target) {
 
