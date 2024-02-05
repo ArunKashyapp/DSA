@@ -1,18 +1,17 @@
 package oddEVEN;
 
-import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
-HelperRecurssion hr  = new HelperRecurssion();
-
-   int[] arr = {1,2,3,4,5,5};
-   System.out.println(Arrays.toString(arr));
+     int a = 13; 
+    //  10100
+    boolean isOdd = (a&1)== 1 ? true : false;
+    System.out.println(isOdd);
         
 
         // Find the 4th bit
        
-        // int i = 0;
+        // int i = 0;*
 
         // System.out.println(j);
         // AboutList list = new AboutList();

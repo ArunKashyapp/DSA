@@ -5,13 +5,19 @@ import java.util.Arrays;
 public class ComeBack {
 
     public static void main(String[] args) {
-        int arr[] = { 234, 234234232, 342343435, 654634, 1, 2, 3, 454, 5653, };
-         bubblSortUsingRecurssion(arr,arr.length-1,0);
-        System.out.println(Arrays.toString(arr));
+
+      String name = "arun";
+     String name1 = new String("karan");
+     System.out.println(reverseString(name));      
 
     }
 
     // 1 1 2 3 5 8 13
+
+    static String reverseString(String string){
+        return new StringBuilder(string).reverse().toString();
+
+    }
 
     static int fibo(int n) {
         if (n < 2) {
@@ -67,7 +73,7 @@ public class ComeBack {
         return arr;
     }
 
-   static void bubblSortUsingRecurssion(int[] arr, int r, int c) {
+    static void bubblSortUsingRecurssion(int[] arr, int r, int c) {
         if (r == 0) {
             return;
         }
@@ -83,4 +89,13 @@ public class ComeBack {
         }
     }
 
+    static int countSetBits(int n) {
+
+        int count = 0;
+        while (n > 0) {
+            n = n & (n - 1);
+            count++;
+        }
+        return count;
+    }
 }
