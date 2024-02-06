@@ -5,18 +5,26 @@ import java.util.Arrays;
 public class ComeBack {
 
     public static void main(String[] args) {
-
-      String name = "arun";
-     String name1 = new String("karan");
-     System.out.println(reverseString(name));      
+      int[] arr =    swapTwoValues(10, 20);
+      System.out.println(Arrays.toString(arr));
 
     }
 
     // 1 1 2 3 5 8 13
 
-    static String reverseString(String string){
+    static String reverseString(String string) {
         return new StringBuilder(string).reverse().toString();
 
+    }
+
+    static int neagativeNumber(int n) {
+        return ~n + 1;
+    }
+
+    static void fizzBuzz() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println(i % 3 == 0 && i % 5 == 0 ? "FizzBuzz" : i % 3 == 0 ? "Fizz" : i % 5 == 0 ? "Buzz" : i);
+        }
     }
 
     static int fibo(int n) {
@@ -98,4 +106,20 @@ public class ComeBack {
         }
         return count;
     }
+
+    static int[] swapTwoValues(int a , int b){
+        int arr[] = new int[2];
+    a= a+b;
+    b = a -b;
+    a= a-b;
+     arr[0] = a;
+     arr[1] = b;
+     return arr;
+    }
+
+
+
+    ///merge sort
+    
+  
 }
