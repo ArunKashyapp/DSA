@@ -7,7 +7,7 @@ public class RecurssionPractice {
 
     public static void main(String[] args) {
 
-    int ans = fibo(5);
+    int ans = fibo(6);
       System.out.println(ans);
 
     }
