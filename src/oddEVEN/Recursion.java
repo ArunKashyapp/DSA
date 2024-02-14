@@ -4,13 +4,24 @@ import java.util.Arrays;
 public class Recursion {
 
     public static void main(String[] args) {
-        int[] arr = {44,3423,56,2,45,22,222,2434};
-        Recursion r = new Recursion();
-        r.bubbleSortUsingRecurssion(arr, arr.length-1, 0);
-        System.out.println(Arrays.toString(arr));
+
+        int ans = fact(6);
+        System.out.println(ans);
+    
     }
 
-    int fibo(int n) {
+    //  0 1 1 2 3 5 8
+
+
+
+    static int fact(int n){
+        if(n <= 1){
+            return 1;
+        }
+        return n*fact(n-1);
+    }
+
+  static   int fibo(int n) {
 
         if (n <= 1) {
             return n;

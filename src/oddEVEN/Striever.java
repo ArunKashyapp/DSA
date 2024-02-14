@@ -6,13 +6,11 @@ public class Striever {
     public static void main(String[] args) {
 
         // find the larges number in the array;
-        int ans = getDouble(10);
-        System.out.println(Deloitte.isPrime(ans));
+       
 
-        int a = 5;
+        int a = 10;
         int b = 6;
-        System.out.println(a & b);
-        System.out.println(ans);
+        System.out.println(a >> 1);
 
     }
 
