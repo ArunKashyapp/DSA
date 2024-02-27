@@ -2,6 +2,14 @@ package oddEVEN;
 
 public class Patterns {
 
+    public static void main(String[] args){
+     
+     int a = 2;
+     int ans  =  a&1;
+     System.out.println(ans);
+
+    }
+
     int maxScore(String s) {
 
         int ones = 0 ;
@@ -22,7 +30,7 @@ public class Patterns {
        return ones;
     }
 
-    void pattern1(int rows, int cols) {
+   static  void pattern1(int rows, int cols) {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
@@ -32,7 +40,7 @@ public class Patterns {
         }
     }
 
-    void pattern2(int rows) {
+    static  void pattern2(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < i + 1; j++) {
                 System.out.print("*");
@@ -41,7 +49,7 @@ public class Patterns {
         }
     }
 
-    void pattern3(int rows) {
+    static  void pattern3(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int j = rows; j > i; j--) {
                 System.out.print("*");
@@ -50,7 +58,7 @@ public class Patterns {
         }
     }
 
-    void pattern4(int rows) {
+    static   void pattern4(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int j = 1; j <= i + 1; j++) {
                 System.out.print(j);
@@ -59,7 +67,7 @@ public class Patterns {
         }
     }
 
-    void pattern5(int rows) {
+    static  void pattern5(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < i + 1; j++) {
                 System.out.print("*");
@@ -75,7 +83,7 @@ public class Patterns {
         }
     }
 
-    void pattern6(int rows) {
+    static  void pattern6(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < rows - i - 1; j++) {
                 System.out.print(" ");
@@ -88,7 +96,7 @@ public class Patterns {
         }
     }
 
-    void pattern7(int rows) {
+    static   void pattern7(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < i; j++) {
                 System.out.print(" ");
@@ -100,7 +108,7 @@ public class Patterns {
         }
     }
 
-    void pattern10(int rows) {
+    static  void pattern10(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < rows - i - 1; j++) {
                 System.out.print(" ");
@@ -114,7 +122,7 @@ public class Patterns {
         }
     }
 
-    void pattern11(int rows) {
+    static  void pattern11(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int k = 0; k <= i; k++) {
                 System.out.print(" ");
@@ -128,7 +136,7 @@ public class Patterns {
         }
     }
 
-    void pattern12(int rows) {
+    static   void pattern12(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int k = 0; k <= i; k++) {
                 System.out.print(" ");
@@ -153,7 +161,7 @@ public class Patterns {
         }
     }
 
-    void pattern13(){
+    static   void pattern13(){
         int n = 5; // You can change the value of n to adjust the size of the pattern
 
         for (int i = 0; i < n; i++) {
