@@ -40,6 +40,16 @@ public class Patterns {
         }
     }
 
+    static void pattern(int n) {
+        for (int row = 1; row < n * 2; row++) {
+            int colsInRow = row > n ? n * 2 - row : row;
+            for (int j = 1; j <= colsInRow; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
     static  void pattern2(int rows) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < i + 1; j++) {
